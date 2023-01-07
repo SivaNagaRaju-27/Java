@@ -7,8 +7,10 @@ class factorial {
     long fact(long x) {
         fact = 1;
         if(x == 0 | x == 1) {
+            System.out.print("1");
             return 1;
         }else{
+            System.out.print(x*fact+"*");
             return x*fact(x-1);
         }
     }
@@ -21,7 +23,8 @@ public class Recursion {
             System.out.print("Enter a Number: ");
             n = sc.nextInt();
         }
+        System.out.print("The factorial of "+n+" is: ");
         fact = f.fact(n);
-        System.out.println("The factorial of "+n+" is: "+fact);
+        System.out.println(" = "+fact);
     }
 }
