@@ -1,0 +1,43 @@
+switch(ch){
+    case '1':
+        System.out.println("The First Matrix...");
+        fn.display(m1);
+        System.out.println("The Second Matrix...");
+        fn.display(m2);
+    break;
+
+    case '2':
+        int m3[][];
+        m3 = fn.add(m1, m2);
+        System.out.println("The Resultant Matrix after Addition is...");
+        fn.display(m3);
+    break;
+}
+
+
+
+int[][] read(int ord){
+    var sc = new Scanner(System.in);
+
+    mat = new int[ord][ord];
+    for(i=0; i<ord; i++){
+        for(j=0; j<ord; j++){
+            System.out.print("Enter Element["+(i+1)+"]["+(j+1)+"]: ");
+            mat[i][j] = sc.nextInt();
+        }
+    }
+    return mat;
+}
+
+
+/*for(;;){
+    if(true){
+        if(ch == 'q'){
+            System.out.println("You choose to Exit...!");
+            break;
+        }
+    }
+}*/
+
+//System.out.println("\t[0].Read Matrix.");
+//System.out.println("\t[1].Display Matrix.");
