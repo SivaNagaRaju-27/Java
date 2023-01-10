@@ -1,11 +1,11 @@
 package Arrays;
 import java.util.*;
 
-class sort{
+class sorting{
     int parCount;
     int sortCount;
     int ar[];
-    sort(int x[]){
+    sorting(int x[]){
         ar = x;
 
     }
@@ -56,7 +56,7 @@ public class QuickSortDemo {
         System.out.println("Your Array...");
         var ob = new Functions();
         ob.show(ar, n);
-        var ob1 = new sort(ar);
+        var ob1 = new sorting(ar);
         ob1.partition(0, n-1);
         System.out.println("After Sorting...");
         ob.show(ar, n);
