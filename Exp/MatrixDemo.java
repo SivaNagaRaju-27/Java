@@ -88,6 +88,8 @@ class displayMatrix{
                     }
                     System.out.print(m[i][j]+" ");
                 }
+
+                if(m[0].length == 1) System.out.print("\b|");
             }
             System.out.println();
         }
