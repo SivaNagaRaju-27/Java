@@ -9,7 +9,8 @@ public class Functions {
 
         while(i < n){
             if(i < n-1) System.out.print(ar[i]+",");
-            else System.out.println(ar[i]+"]");              
+            else System.out.println(ar[i]+"]"); 
+            i++;             
         }
     }
 
