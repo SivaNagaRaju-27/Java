@@ -21,7 +21,7 @@ class Triangle extends TwoDShape {
     }
 }
 
-public class ShapesDemo {
+public class singleLevel {
     public static void main(String args[]) {
         Triangle t1 = new Triangle();
         Triangle t2 = new Triangle();
