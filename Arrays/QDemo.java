@@ -6,11 +6,13 @@ public class QDemo {
         var br = new BufferedReader(new InputStreamReader(System.in));
         var fq = new FixedQueue(10);
         var cq = new circularQueue(10);
+        var dq = new dynamicQueue(10);
         IntegerQ ob;
 
         String str;
         System.out.println("\n\t[1].Fixed Linear Queue.");
         System.out.println("\t[2].Fixed Circular Queue.");
+        System.out.println("\t[3].Dynamic Queue.");
         System.out.print("Choose Your Option: ");
         str = br.readLine();
 
@@ -18,6 +20,8 @@ public class QDemo {
             case "1": ob = fq;
             break;
             case "2": ob = cq;
+            break;
+            case "3": ob = dq;
             break;
             default: ob = fq;
         }
