@@ -1,5 +1,8 @@
 package Arrays;
 import java.io.*;
+
+import exceptionHandling.QueueEmptyException;
+import exceptionHandling.QueueFullException;
 public class QDemo {
     public static void main(String args[])throws Exception {
         int flag = -1;
@@ -38,22 +41,36 @@ public class QDemo {
                 case "1": int x;
                     System.out.print("Enter a Value: ");
                     x = Integer.parseInt(br.readLine());
-                    ob.put(x);
+                    try{
+                        ob.put(x);
+                    }catch(QueueFullException exc){
+                        System.out.println(exc);
+                    }
                     System.out.println();
                 break;
 
-                case "2": int y = ob.get();
-                    if(y != -99999) System.out.println("The Next Element is: "+y);
+                case "2": 
+                    try{
+                        int y = ob.get();
+                        if(y != -99999)System.out.println("The Next Element is: "+y);
+                    }
+                    catch(QueueEmptyException exc){
+                        System.out.println(exc);
+                    }
                     System.out.println();
                 break;
 
                 case "3": 
                     int z;
                     System.out.print("The Queue contents are: ");
-                    for(; ; ){
-                        z = ob.get();
-                        if(z != -99999) System.out.print(z+" ");
-                        else break;
+                    try{
+                        for(; ; ){
+                            z = ob.get();
+                            if(z != -99999) System.out.print(z+" ");
+                            else break;
+                        }
+                    }catch(QueueEmptyException exc){
+                        System.out.println(exc);
                     }
                     System.out.println();
                 break;

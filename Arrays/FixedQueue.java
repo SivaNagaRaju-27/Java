@@ -1,5 +1,5 @@
 package Arrays;
-
+import exceptionHandling.*;
 public class FixedQueue implements IntegerQ {
     int q[];
     int putLoc,getLoc;
@@ -8,23 +8,21 @@ public class FixedQueue implements IntegerQ {
         putLoc = getLoc = 0;
     }
 
-    public void put(int x){
-        if(putLoc == q.length) {
-            System.out.println(" -- Queue is full...! Can't put this value into Queue.");
-            return;
+    public void put(int x)throws QueueFullException{
+        if(putLoc == q.length){
+            throw new QueueFullException(q.length);
         }
         if(putLoc == q.length-1){
-            System.out.println(" -- Queue is full...");
+            System.out.println("-- Now Queue is at it's Maximum.");
         }
         q[putLoc++] = x;
     }
 
-    public int get(){
+    public int get()throws QueueEmptyException{
         int temp;
         if(getLoc >= putLoc) {
-            System.out.println(" -- Queue is empty...");
             getLoc = putLoc = 0;
-            return -99999;
+            throw new QueueEmptyException();
         }
         temp = q[getLoc];
         q[getLoc] = 0;
