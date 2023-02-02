@@ -13,7 +13,7 @@ public class BinaryIOStreams {
         boolean b = true;
         //String s = "The End!";
 
-        try (var dout = new DataOutputStream(new FileOutputStream("testdata"))){
+        try (var dout = new DataOutputStream(new FileOutputStream("./IO_M1/binaryText.txt"))){
             System.out.println("Writing "+i);
             dout.writeInt(i);
             System.out.println("Writing "+d);
@@ -27,7 +27,7 @@ public class BinaryIOStreams {
             return;
         }
 
-        try (var din = new DataInputStream(new FileInputStream("testdata"))){
+        try (var din = new DataInputStream(new FileInputStream("./IO_M1/binaryText.txt"))){
             int x = din.readInt();
             System.out.println("We Read "+x);
 
